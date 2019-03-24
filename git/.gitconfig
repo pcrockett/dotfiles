@@ -1,0 +1,15 @@
+[core]
+	editor = nano
+[user]
+	name = Philip Crockett
+	email = contact@philcrockett.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+	graph = log --graph --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%an%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)'
+	bigpicture = log --graph --simplify-by-decoration --format=format:'%C(bold blue)%h%C(reset) %C(auto)%D%C(reset) - %C(bold cyan)%an%C(reset) %ar'
+	hide = update-index --assume-unchanged
+	unhide = update-index --really-refresh
