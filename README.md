@@ -1,10 +1,21 @@
 dotfiles
 ========
 
-My personal dotfiles. To install:
+My personal dotfiles.
+
+Installation
+------------
+
+On Linux:
 
 ```bash
-git clone git@github.com:pcrockett/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./install.sh
+git clone git@github.com:pcrockett/dotfiles.git
+./dotfiles/install.sh
+```
+
+On Windows:
+
+```powershell
+git clone git@github.com:pcrockett/dotfiles.git
+.\dotfiles\install.ps1
 ```
