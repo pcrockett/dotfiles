@@ -2,6 +2,10 @@ $ErrorActionPreference = "Stop"
 Set-StrictMode -Version 5.0
 
 $vsCodeUserDir = Join-Path $env:APPDATA "Code\User"
+if (!(Test-Path $vsCodeUserDir)) {
+    New-Item -Type Directory $vsCodeUserDir | Out-Null
+}
+
 New-SymbolicLink "$vsCodeUserDir\settings.json" "$PSScriptRoot\settings.json"
 New-SymbolicLink "$vsCodeUserDir\keybindings.json" "$PSScriptRoot\keybindings.json"
 
