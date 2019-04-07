@@ -1,0 +1,47 @@
+{
+/*
+        // Place your snippets for PowerShell here. Each snippet is defined under a snippet name and has a prefix, body and 
+        // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+        // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+        // Example:
+        "Print to console": {
+        "prefix": "log",
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    }
+*/
+    "Strict Mode": {
+        "prefix": "strict",
+        "body": [
+            "\\$ErrorActionPreference = \"Stop\"",
+            "Set-StrictMode -Version 5.0"
+        ],
+        "description": "Turn on strict mode and stop on error"
+    },
+
+    "PowerShell Script Docs": {
+        "prefix": "psdoc",
+        "body": [
+            "<#",
+            ".SYNOPSIS",
+            "    Write synopsis here",
+            "",
+            ".DESCRIPTION",
+            "    Write detailed description here",
+            "",
+            ".PARAMETER Param1",
+            "    Write description for Param1 here",
+            "",
+            ".PARAMETER Param2",
+            "    Write description for Param2 here",
+            "",
+            ".EXAMPLE",
+            "    Write example usage here",
+            "#>"
+        ],
+        "description": "Comment documentation template"
+    }
+}

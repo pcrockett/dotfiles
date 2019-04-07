@@ -1,5 +1,15 @@
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version 5.0
+
 $vsCodeUserDir = Join-Path $env:APPDATA "Code\User"
 New-SymbolicLink "$vsCodeUserDir\settings.json" "$PSScriptRoot\settings.json" -Force
+
+$snippetsDir = Join-Path $vsCodeUserDir "snippets"
+Get-ChildItem "$PSScriptRoot\snippets" `
+    | Where-Object { $_ -is [IO.FileInfo] -and $_.Extension -eq ".json" } `
+    | ForEach-Object {
+        New-SymbolicLink "$snippetsDir\$($_.Name)" $_.FullName
+    }
 
 if (!(Get-Command code -ErrorAction SilentlyContinue)) {
     Write-Warning """code"" command not found. Install VS Code and get it on PATH, then re-run this script."
