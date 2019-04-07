@@ -26,3 +26,10 @@ function New-SymbolicLink([string]$Path, [string]$Target) {
 }
 
 New-SymbolicLink "~\.gitconfig" "$PSScriptRoot\git\.gitconfig"
+
+$winPowDir = Split-Path $PROFILE.CurrentUserAllHosts
+if (!(Test-Path $winPowDir)) {
+    New-Item -Type Directory $winPowDir
+}
+
+New-SymbolicLink $PROFILE.CurrentUserAllHosts "$PSScriptRoot\powershell\profile.ps1"
