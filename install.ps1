@@ -42,5 +42,4 @@ if (!(Test-Path $winPowDir)) {
 }
 New-SymbolicLink $PROFILE.CurrentUserAllHosts "$PSScriptRoot\powershell\profile.ps1"
 
-$vsCodeUserDir = Join-Path $env:APPDATA "Code\User"
-New-SymbolicLink "$vsCodeUserDir\settings.json" "$PSScriptRoot\vscode\settings.json" -Force
+& "$PSScriptRoot\vscode\install.ps1"
