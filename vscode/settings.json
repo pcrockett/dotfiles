@@ -1,0 +1,119 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.rulers": [ 80 ],
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.renderWhitespace": "boundary",
+
+    "terminal.external.windowsExec": "C:\\WINDOWS\\sysnative\\WINDOWSPOWERSHELL\\V1.0\\powershell.exe",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\sysnative\\WINDOWSPOWERSHELL\\V1.0\\powershell.exe",
+
+    "window.openFilesInNewWindow": "off",
+
+    "files.associations": {
+        "*.vstemplate": "xml",
+        "*.props": "xml"
+    },
+
+    "csharp.suppressDotnetInstallWarning": true,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.js.map": true,
+        "**/*.csproj.user": true
+    },
+
+    "window.newWindowDimensions": "inherit",
+    "window.menuBarVisibility": "toggle",
+
+    "markdownlint.config": {
+        "MD003": {
+            "style": "setext_with_atx" // Header style https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md003
+        },
+        "MD007": false, // Unordered list indentation https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md007
+        "MD013": false, // Line length https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md013
+        "MD029": {
+            "style": "ordered" // Ordered list item prefix https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md029
+        },
+        "MD033": { // Allow some HTML elements https://github.com/DavidAnson/markdownlint/blob/v0.8.0/doc/Rules.md#md033
+            "allowed_elements": [
+                "strike",
+                "p",
+                "br"
+            ]
+        },
+        "MD040": false, // Fenced code requiring language specification https://github.com/DavidAnson/markdownlint/blob/v0.8.0/doc/Rules.md#md040
+        "MD045": false // Allow images to have no alt-text
+    },
+
+    // Useful for Workspace Settings: --css
+    // The file path you give after the --css parameter should be relative to
+    // the file you are currently editing. ${workspaceFolder} doesn't work.
+    "pandoc.htmlOptString": "--self-contained -t html5",
+    "git.confirmSync": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "editor.action.toggleTabFocusMode",
+        "workbench.action.debug.continue",
+        "workbench.action.debug.pause",
+        "workbench.action.debug.restart",
+        "workbench.action.debug.run",
+        "workbench.action.debug.start",
+        "workbench.action.debug.stop",
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.focusSecondEditorGroup",
+        "workbench.action.focusThirdEditorGroup",
+        "workbench.action.navigateDown",
+        "workbench.action.navigateLeft",
+        "workbench.action.navigateRight",
+        "workbench.action.navigateUp",
+        "workbench.action.openNextRecentlyUsedEditorInGroup",
+        "workbench.action.openPreviousRecentlyUsedEditorInGroup",
+        "workbench.action.showCommands",
+        "workbench.action.terminal.clear",
+        "workbench.action.terminal.copySelection",
+        "workbench.action.terminal.deleteWordLeft",
+        "workbench.action.terminal.deleteWordRight",
+        "workbench.action.terminal.findWidget.history.showNext",
+        "workbench.action.terminal.findWidget.history.showPrevious",
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.focusAtIndex1",
+        "workbench.action.terminal.focusAtIndex2",
+        "workbench.action.terminal.focusAtIndex3",
+        "workbench.action.terminal.focusAtIndex4",
+        "workbench.action.terminal.focusAtIndex5",
+        "workbench.action.terminal.focusAtIndex6",
+        "workbench.action.terminal.focusAtIndex7",
+        "workbench.action.terminal.focusAtIndex8",
+        "workbench.action.terminal.focusAtIndex9",
+        "workbench.action.terminal.focusFindWidget",
+        "workbench.action.terminal.focusNext",
+        "workbench.action.terminal.focusPrevious",
+        "workbench.action.terminal.hideFindWidget",
+        "workbench.action.terminal.kill",
+        "workbench.action.terminal.new",
+        "workbench.action.terminal.paste",
+        "workbench.action.terminal.runActiveFile",
+        "workbench.action.terminal.runSelectedText",
+        "workbench.action.terminal.scrollDown",
+        "workbench.action.terminal.scrollDownPage",
+        "workbench.action.terminal.scrollToBottom",
+        "workbench.action.terminal.scrollToTop",
+        "workbench.action.terminal.scrollUp",
+        "workbench.action.terminal.scrollUpPage",
+        "workbench.action.terminal.selectAll",
+        "workbench.action.terminal.toggleTerminal"
+
+        // Removing this from the list because it's ctrl+q, and I want to use ctrl+q with the micro text editor
+        // "workbench.action.quickOpenView"
+
+        // Removing this from the list because it's ctrl+e, and I want to use ctrl+e with the micro text editor
+        // "workbench.action.quickOpen"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "git.enableSmartCommit": true,
+    "telemetry.enableTelemetry": false
+}
