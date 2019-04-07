@@ -1,0 +1,4 @@
+ms-vscode.powershell
+rust-lang.rust
+davidanson.vscode-markdownlint
+dougfinke.vscode-pandoc
