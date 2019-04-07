@@ -1,0 +1,30 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        // I want ctrl+` to open the terminal if not already open, and focus
+        // the terminal if not already focused. The default behavior is for
+        // ctrl+` to always open or close the terminal.
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask"
+    },
+
+    // I always get ctrl+p and ctrl+shift+p mixed up. Let's make them both show
+    // commands, and have ctrl+, do quickOpen
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "workbench.action.showCommands"
+    }
+]
