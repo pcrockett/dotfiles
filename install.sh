@@ -9,4 +9,3 @@ REPO_DIR=`dirname "$(readlink -f "$0")"`
 # the user will be prompted with an (expected) error message, but the show will
 # go on because of all the `|| true` bits at the end of the command.
 ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
-ln -sv "$REPO_DIR/bash/.profile" ~/.profile || true
