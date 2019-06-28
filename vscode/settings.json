@@ -115,5 +115,6 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 1
 }
