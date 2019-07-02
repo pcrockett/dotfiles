@@ -10,6 +10,7 @@ REPO_DIR=`dirname "$(readlink -f "$0")"`
 # go on because of all the `|| true` bits at the end of the command.
 ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
 ln -sv "$REPO_DIR/gpg/gpg.conf" ~/.gnupg/gpg.conf || true
+ln -sv "$REPO_DIR/gpg/dirmngr.conf" ~/.gnupg/dirmngr.conf || true
 
 if [ ! -v INTERACTIVE_PROFILE_LOADED ]; then
     echo "" >> ~/.bashrc
