@@ -35,6 +35,10 @@
         },
         "MD007": false, // Unordered list indentation https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md007
         "MD013": false, // Line length https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md013
+        "MD026": { // Trailing punctuation in heading https://github.com/DavidAnson/markdownlint/blob/v0.15.0/doc/Rules.md#md026
+            // Set to default, but removed ? and ! (the ? and ! below are similar, but different unicode characters)
+            "punctuation": ".,;:。，；：！？"
+        },
         "MD029": {
             "style": "ordered" // Ordered list item prefix https://github.com/DavidAnson/markdownlint/blob/v0.5.0/doc/Rules.md#md029
         },
