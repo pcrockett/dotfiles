@@ -9,8 +9,14 @@ REPO_DIR=`dirname "$(readlink -f "$0")"`
 # the user will be prompted with an (expected) error message, but the show will
 # go on because of all the `|| true` bits at the end of the command.
 ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
-ln -sv "$REPO_DIR/gpg/gpg.conf" ~/.gnupg/gpg.conf || true
-ln -sv "$REPO_DIR/gpg/dirmngr.conf" ~/.gnupg/dirmngr.conf || true
+
+GPG_DIR=~/.gnupg
+if [ ! -d "$GPG_DIR" ]; then
+  mkdir "$GPG_DIR"
+fi
+
+ln -sv "$REPO_DIR/gpg/gpg.conf" "$GPG_DIR/gpg.conf" || true
+ln -sv "$REPO_DIR/gpg/dirmngr.conf" "$GPG_DIR/dirmngr.conf" || true
 
 if [ ! -v INTERACTIVE_PROFILE_LOADED ]; then
     echo "" >> ~/.bashrc
