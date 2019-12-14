@@ -10,13 +10,8 @@ REPO_DIR=`dirname "$(readlink -f "$0")"`
 # go on because of all the `|| true` bits at the end of the command.
 ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
 
-GPG_DIR=~/.gnupg
-if [ ! -d "$GPG_DIR" ]; then
-  mkdir "$GPG_DIR"
-fi
-
-ln -sv "$REPO_DIR/gpg/gpg.conf" "$GPG_DIR/gpg.conf" || true
-ln -sv "$REPO_DIR/gpg/dirmngr.conf" "$GPG_DIR/dirmngr.conf" || true
+bash "$REPO_DIR/gpg/install.sh"
+bash "$REPO_DIR/powershell/install.sh"
 
 if [ ! -v INTERACTIVE_PROFILE_LOADED ]; then
     echo "" >> ~/.bashrc
