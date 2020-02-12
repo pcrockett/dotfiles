@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 set -Eeuo pipefail
 
-REPO_DIR=`dirname "$(readlink -f "$0")"`
+[[ "${BASH_VERSINFO[0]}" -lt 4 ]] && echo "Bash >= 4 required" && exit 1
+
+REPO_DIR=$(dirname "$(readlink -f "$0")")
 
 # Add soft links to files in this repo. If the destination file already exists,
 # the user will be prompted with an (expected) error message, but the show will

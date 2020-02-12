@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 set -Eeuo pipefail
 
-THIS_DIR=`dirname "$(readlink -f "$0")"`
+[[ "${BASH_VERSINFO[0]}" -lt 4 ]] && echo "Bash >= 4 required" && exit 1
+
+THIS_DIR=$(dirname "$(readlink -f "$0")")
 
 GPG_DIR=~/.gnupg
 if [ ! -d "$GPG_DIR" ]; then
