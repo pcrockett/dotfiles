@@ -14,6 +14,7 @@ ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
 
 bash "$REPO_DIR/gpg/install.sh"
 bash "$REPO_DIR/powershell/install.sh"
+bash "$REPO_DIR/vscode/install.sh"
 
 if [ ! -v INTERACTIVE_PROFILE_LOADED ]; then
     echo "" >> ~/.bashrc
