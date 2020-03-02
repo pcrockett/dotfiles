@@ -12,6 +12,7 @@ REPO_DIR=$(dirname "$(readlink -f "$0")")
 # go on because of all the `|| true` bits at the end of the command.
 ln -sv "$REPO_DIR/git/.gitconfig" ~/.gitconfig || true
 
+bash "$REPO_DIR/ssh/install.sh"
 bash "$REPO_DIR/gpg/install.sh"
 bash "$REPO_DIR/powershell/install.sh"
 bash "$REPO_DIR/vscode/install.sh"
