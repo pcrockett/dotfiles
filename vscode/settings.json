@@ -120,5 +120,10 @@
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "telemetry.enableTelemetry": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+
+    "shellcheck.ignorePatterns": {
+        "**/*.zsh": true,
+        "**/*.profile": true
+    }
 }
