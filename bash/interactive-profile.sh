@@ -10,3 +10,8 @@ export OFFLINE_ENCRYPT_KEY="110054020B03B6FF!"
 
 # Leave this environment variable export here. It is used in the install script.
 export INTERACTIVE_PROFILE_LOADED=true
+
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+    # shellcheck source=/dev/null
+    . ~/.nix-profile/etc/profile.d/nix.sh
+fi
