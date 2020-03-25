@@ -27,11 +27,9 @@ function New-SymbolicLink([string]$Path, [string]$Target, [switch]$Force) {
         }
     }
 
-    cmd /c mklink $Path $Target
-    $result = $LASTEXITCODE
-    if ($result -ne 0) {
-        throw "mklink exited with code $result"
-    }
+    New-Item -ItemType HardLink -Path $Path -Value $Target
+    # I know this isn't actually a symbolic link... those require admin
+    # privileges on Windows unfortunately. Hard links should do the trick though!
 }
 
 New-SymbolicLink "~\.gitconfig" "$PSScriptRoot\git\.gitconfig"
