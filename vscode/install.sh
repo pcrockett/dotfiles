@@ -4,15 +4,18 @@
 set -Eeuo pipefail
 
 THISDIR=$(dirname "$(readlink -f "$0")")
-USERDIR=~/.config/VSCodium/User
-SNIPPETSDIR="$USERDIR/snippets"
+CODIUM_USER_DIR=~/.config/VSCodium/User
+CODIUM_SNIPPETS_DIR="$CODIUM_USER_DIR/snippets"
 
-mkdir --parents "$SNIPPETSDIR"
+mkdir --parents "$CODIUM_SNIPPETS_DIR"
 
-ln -sv "$THISDIR/settings.json" "$USERDIR/settings.json" || true
-ln -sv "$THISDIR/keybindings.json" "$USERDIR/keybindings.json" || true
+ln --symbolic --verbose "$THISDIR/settings.json" "$CODIUM_USER_DIR/settings.json" || true
+ln --symbolic --verbose "$THISDIR/keybindings.json" "$CODIUM_USER_DIR/keybindings.json" || true
 
 SNIPPETNAMES=$(basename -a $THISDIR/snippets/*.json)
 for snippetname in $SNIPPETNAMES; do
-    ln -sv "$THISDIR/snippets/$snippetname" "$SNIPPETSDIR/$snippetname" || true
+    ln --symbolic --verbose "$THISDIR/snippets/$snippetname" "$CODIUM_SNIPPETS_DIR/$snippetname" || true
 done
+
+OSS_USER_DIR=~/.config/Code\ -\ OSS/User
+ln --symbolic --verbose "${CODIUM_USER_DIR}" "${OSS_USER_DIR}" || true
