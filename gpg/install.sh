@@ -5,12 +5,13 @@ set -Eeuo pipefail
 
 [[ "${BASH_VERSINFO[0]}" -lt 4 ]] && echo "Bash >= 4 required" && exit 1
 
-THIS_DIR=$(dirname "$(readlink -f "$0")")
+THIS_DIR=$(dirname "$(readlink -f "${0}")")
 
 GPG_DIR=~/.gnupg
-if [ ! -d "$GPG_DIR" ]; then
-  mkdir "$GPG_DIR"
+if [ ! -d "${GPG_DIR}" ]; then
+  mkdir "${GPG_DIR}"
 fi
 
-ln -sv "$THIS_DIR/gpg.conf" "$GPG_DIR/gpg.conf" || true
-ln -sv "$THIS_DIR/dirmngr.conf" "$GPG_DIR/dirmngr.conf" || true
+chmod go-rwx "${GPG_DIR}"
+ln --symbolic --verbose "${THIS_DIR}/gpg.conf" "${GPG_DIR}/gpg.conf" || true
+ln --symbolic --verbose "${THIS_DIR}/dirmngr.conf" "${GPG_DIR}/dirmngr.conf" || true
